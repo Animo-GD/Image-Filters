@@ -66,8 +66,8 @@ def prewitt(image):
     prewitt_kernel_y = np.array([[-1, -1, -1],
                                  [0, 0, 0],
                                  [1, 1, 1]], dtype=np.float32)
-    gradient_x = cv2.filter2D(cv2.convertScaleAbs(gray_image), -1, prewitt_kernel_x)
-    gradient_y = cv2.filter2D(cv2.convertScaleAbs(gray_image), -1, prewitt_kernel_y)
+    gradient_x = cv2.filter2D(gray_image, -1, prewitt_kernel_x)
+    gradient_y = cv2.filter2D(gray_image, -1, prewitt_kernel_y)
     gradient_magnitude = np.sqrt(gradient_x ** 2 + gradient_y ** 2)
     gradient_magnitude = np.uint8(gradient_magnitude)
     return gradient_magnitude
