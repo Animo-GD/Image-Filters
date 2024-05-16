@@ -6,9 +6,7 @@ import numpy as np
 from filters import *
 
 # Function to perform Segmentation using Thresholding
-def threshold_segmentation(image):
-    _, binary_image = cv2.threshold(cv2.convertScaleAbs(image), 127, 255, cv2.THRESH_BINARY)
-    return binary_image
+
 
 # Function to apply the selected filter
 def apply_filter():
